@@ -4,6 +4,7 @@ This tool uses the EC2 instances from AWS to spawn a Kali Linux virtual machine 
 
 You can reuse this code as you want and make modifications but please do not forget to mention my work. Thanks!
 
+Happy hacking!
 
 ## Prerequisites:
 
@@ -26,7 +27,7 @@ aws configure --profile htb-aws
 ```
 - In ~/.aws/credentials you should find something similar to this:
 ```
-\<Potential other credentials...\>
+<Potential other credentials...>
 [htb-aws]
 aws_access_key_id = AKIAXXXXXXXXXXXXXXXX
 aws_secret_access_key = XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -78,4 +79,4 @@ To uninstall the tool you only need to execute the **uninstall.sh** script.
 
 ## Potential errors
 
-In case of errors in the scripts you can manually delete the created resources from the AWS console ()
+In case of errors in the scripts you can manually delete the created resources from the AWS console (look at the IDs in the configuration file).
