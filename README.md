@@ -1,27 +1,26 @@
-##Presentation
+## Presentation
 
 This tool uses the EC2 instances from AWS to spawn a Kali Linux virtual machine in the cloud, directly connected to the HTB lab.
 
 You can reuse this code as you want and make modifications but please do not forget to mention my work. Thanks!
 
-If you have questions do not hesitate to contact me on Discord: KrowZ # 3603
 
-##Prerequisites:
+## Prerequisites:
 
 - AWS account (free tier is working)
 - HackTheBox account and openvpn file to connect to the VPN lab
 - Right to create a new user in AWS.
 
-##How to create a new IAM user in AWS console?
+## How to create a new IAM user in AWS console?
 
-- In the AWS console go to services (upper left).
-- Select **IAM** under the Security, Identity & Compliance section or search in the top search bar "iam".
-- In IAM, select **Users** in the navigation panel on the left.
-- Click **Add user** (top right blue button)
-- Fill out the user name filed with **htb-aws**, and for access type, select **"Access key - Programmatic access"**.
-- Select the option named **Attach existing policies directly**. Search and add the policy **AmazonEC2FullAccess**.
-- Copy the access key and secret. Be careful! Once this page left it is not possible anymore to retrieve these credentials. You will need to delete this one and create a new user.
-- Use the aws configure command:
+1) In the AWS console go to services (upper left).
+2) Select **IAM** under the Security, Identity & Compliance section or search in the top search bar "iam".
+3) In IAM, select **Users** in the navigation panel on the left.
+4) Click **Add user** (top right blue button)
+5) Fill out the user name filed with **htb-aws**, and for access type, select **"Access key - Programmatic access"**.
+6) Select the option named **Attach existing policies directly**. Search and add the policy **AmazonEC2FullAccess**.
+7) Copy the access key and secret. Be careful! Once this page left it is not possible anymore to retrieve these credentials. You will need to delete this one and create a new user.
+8) Use the aws configure command:
 ```bash
 aws configure --profile htb-aws
 ```
@@ -33,7 +32,7 @@ aws_access_key_id = AKIAXXXXXXXXXXXXXXXX
 aws_secret_access_key = XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
 
-##Installation
+## Installation
 
 All the installation can be made **without sudo** rights.
 
@@ -42,7 +41,7 @@ All the important files will be stored in the same directory.
 
 You can now run your own Kali Linux machine in the cloud and hack HTB machines!
 
-##Usage
+## Usage
 
 ```bash
 ./htb-aws-spawn.sh -f <htb_lab.ovpn> [-r]
@@ -67,10 +66,16 @@ Once the installation completed you can modify some options in the configuration
 - AMI_USER -> Default user to connect to the instance.
 - REGION -> Region when resources will be created. Your current region by default.
 
-##Removing the tool
+## Contact
+
+If you have any questions do not hesitate to contact me: 
+- Discord -> KrowZ#3603
+- Twitter -> [@ZworKrowZ](https://twitter.com/ZworKrowZ)
+
+## Removing the tool
 
 To uninstall the tool you only need to execute the **uninstall.sh** script.
 
-##Potential errors
+## Potential errors
 
 In case of errors in the scripts you can manually delete the created resources from the AWS console ()
