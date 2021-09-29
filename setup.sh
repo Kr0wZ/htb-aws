@@ -7,8 +7,6 @@ CONFIG_FILE="$CURRENT_DIR/htb-aws.conf"
 USER="htb-aws"
 SG_NAME="htb-aws-sg"
 KEY_NAME="htb-aws-key"
-#You can change the ports
-OPEN_PORTS="1337,4444,5555,6666"
 
 function usage(){
 	echo "$0" "-f"
